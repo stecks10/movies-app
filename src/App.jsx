@@ -1,9 +1,21 @@
-import React from "react";
+import { useState } from "react";
+import { Search } from "./components/Search";
 
 const App = () => {
+  const [searchTerm, setSearchTerm] = useState("I am Batmam");
+
   return (
-    <div>
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <div className="pattern">
+      <h1 class="wrapper">
+        <header>
+          <img src="./hero.png" alt="hero png" />
+          Encontre <span className="text-gradient">Filmes</span> que você vai
+          gostar sem problemas Pesquisar
+        </header>
+
+        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <h1 className="text-white">{searchTerm}</h1>
+      </h1>
     </div>
   );
 };
